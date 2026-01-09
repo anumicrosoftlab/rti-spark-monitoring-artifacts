@@ -62,3 +62,10 @@ find_replace:
     is_regex: "true"
     item_type: "Eventstream"
     item_name: ["SparkMonitoring.Eventstream"]
+
+  - find_value: "SparkMonitoring"
+    replace_value:
+    ALL: "Spark Monitoring.KQLDatabase"
+    is_regex: "false"
+    item_type: "KQLQueryset"
+
