@@ -2,123 +2,63 @@ find_replace:
   # Workspace ID replacements
   - find_value: \#\s*META\s+"default_workspace_id":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
     replace_value:
-      _ALL_: "$workspace.$id" # workspace ID (dynamic)
+      _ALL_: "$workspace.$id"
     is_regex: "true"
     item_type: "Notebook"
 
   - find_value: $workspaceId
     replace_value:
-      _ALL_: "$workspace.$id" # workspace ID (dynamic)
+      _ALL_: "$workspace.$id"
     is_regex: "false"
     item_type: "Notebook"
 
   # Eventhouse GUID replacements
-  - find_value: \#\s*META\s+"default_eventhouse":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
-    replace_value:
-      _ALL_: "$items.Eventhouse.Spark Monitoring.Eventhouse.$id" # eventhouse GUID (dynamic)
-    is_regex: "true"
-    item_type: "Notebook"
-
   - find_value: 61e0280c-4975-8bf6-4e6d-cc748ab5be27
     replace_value:
-      _ALL_: "$items.Eventhouse.Spark Monitoring.Eventhouse.$id" # eventhouse GUID (dynamic)
+      _ALL_: "$items.Eventhouse.Spark Monitoring.Eventhouse.$id"
+    is_regex: "false"
     item_type: "Notebook"
 
-  # KQL Database GUID replacements
-  - find_value: \#\s*META\s+"default_kql_database":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
-    replace_value:
-      _ALL_: "$items.KQLDatabase.Spark Monitoring.KQLDatabase.$id" # KQL database GUID (dynamic)
-    is_regex: "true"
-    item_type: "Notebook"
-
+  # KQL Database GUID replacements  
   - find_value: 3e46dcfb-d099-b0ef-4861-4603e64229bd
     replace_value:
-      _ALL_: "$items.KQLDatabase.Spark Monitoring.KQLDatabase.$id" # KQL database GUID (dynamic)
+      _ALL_: "$items.KQLDatabase.Spark Monitoring.KQLDatabase.$id"
+    is_regex: "false"
     item_type: "Notebook"
 
   # Eventstream GUID replacements
-  - find_value: \#\s*META\s+"default_eventstream":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
-    replace_value:
-      _ALL_: "$items.Eventstream.SparkMonitoring.Eventstream.$id" # eventstream GUID (dynamic)
-    is_regex: "true"
-    item_type: "Notebook"
-
   - find_value: 3d2fdfb1-601b-8f71-4e11-34ed0a2c79aa
     replace_value:
-      _ALL_: "$items.Eventstream.SparkMonitoring.Eventstream.$id" # eventstream GUID (dynamic)
+      _ALL_: "$items.Eventstream.SparkMonitoring.Eventstream.$id"
+    is_regex: "false"
     item_type: "Notebook"
 
   # Notebook GUID replacements
-  - find_value: \#\s*META\s+"spark_monitoring_notebook":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
-    replace_value:
-      _ALL_: "$items.Notebook.Spark Monitoring Recommedations.Notebook.$id" # notebook GUID (dynamic)
-    is_regex: "true"
-    item_type: "DataPipeline"
-    item_name: ["SparkLensPipeline.DataPipeline"]
-
   - find_value: 9b7cc66d-40b7-8a6f-4a38-2bcdda7eb24a
     replace_value:
-      _ALL_: "$items.Notebook.Spark Monitoring Recommedations.Notebook.$id" # notebook GUID (dynamic)
+      _ALL_: "$items.Notebook.Spark Monitoring Recommedations.Notebook.$id"
+    is_regex: "false"
     item_type: "DataPipeline"
     item_name: ["SparkLensPipeline.DataPipeline"]
 
   # Data Pipeline GUID replacements
-  - find_value: \#\s*META\s+"spark_lens_pipeline":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
-    replace_value:
-      _ALL_: "$items.DataPipeline.SparkLensPipeline.DataPipeline.$id" # data pipeline GUID (dynamic)
-    is_regex: "true"
-    item_type: "Notebook"
-
   - find_value: 599af237-f1cc-863d-481e-22001aacb285
     replace_value:
-      _ALL_: "$items.DataPipeline.SparkLensPipeline.DataPipeline.$id" # data pipeline GUID (dynamic)
+      _ALL_: "$items.DataPipeline.SparkLensPipeline.DataPipeline.$id"
+    is_regex: "false"
     item_type: "Notebook"
 
   # KQL Dashboard GUID replacements
-  - find_value: \#\s*META\s+"spark_monitoring_dashboard":\s*"([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})"
-    replace_value:
-      _ALL_: "$items.KQLDashboard.Spark Monitoring.KQLDashboard.$id" # KQL dashboard GUID (dynamic)
-    is_regex: "true"
-    item_type: "Notebook"
-
   - find_value: 94b0dac6-cc63-8c9d-4a4b-40404f12bf39
     replace_value:
-      _ALL_: "$items.KQLDashboard.Spark Monitoring.KQLDashboard.$id" # KQL dashboard GUID (dynamic)
-    item_type: "Notebook"
-
-  # Kusto URI replacements for Data Pipeline parameters
-  - find_value: $kustoQueryUri
-    replace_value:
-      _ALL_: "$items.Eventhouse.Spark Monitoring.Eventhouse.$kustoQueryUri" # kusto query URI (dynamic)
-    is_regex: "false"
-    item_type: "DataPipeline"
-    item_name: ["SparkLensPipeline.DataPipeline"]
-
-  - find_value: $kustoIngestUri
-    replace_value:
-      _ALL_: "$items.Eventhouse.Spark Monitoring.Eventhouse.$kustoIngestUri" # kusto ingest URI (dynamic)
-    is_regex: "false"
-    item_type: "DataPipeline"
-    item_name: ["SparkLensPipeline.DataPipeline"]
-
-  # Custom endpoint name replacements for Eventstream
-  - find_value: $ingestionEndpointName
-    replace_value:
-      _ALL_: "$items.Eventstream.SparkMonitoring.Eventstream.$customEndpointName.IngestionEndpoint" # eventstream endpoint (dynamic)
+      _ALL_: "$items.KQLDashboard.Spark Monitoring.KQLDashboard.$id"
     is_regex: "false"
     item_type: "Notebook"
 
-  # Cross-references in JSON configurations
-  - find_value: \s+"itemName":\s*"Spark Monitoring\.KQLDatabase"
+  # Cross-references in JSON configurations (FIXED with capturing groups)
+  - find_value: ("itemName":\s*"Spark Monitoring\.KQLDatabase")
     replace_value:
-      _ALL_: '"itemName": "$items.KQLDatabase.Spark Monitoring.KQLDatabase.$name"' # KQL database name reference (dynamic)
+      _ALL_: "\"itemName\": \"$items.KQLDatabase.Spark Monitoring.KQLDatabase.$name\""
     is_regex: "true"
     item_type: "Eventstream"
     item_name: ["SparkMonitoring.Eventstream"]
-
-  - find_value: \s+"itemName":\s*"Spark Monitoring Recommedations\.Notebook"
-    replace_value:
-      _ALL_: '"itemName": "$items.Notebook.Spark Monitoring Recommedations.Notebook.$name"' # notebook name reference (dynamic)
-    is_regex: "true"
-    item_type: "DataPipeline"
-    item_name: ["SparkLensPipeline.DataPipeline"]
