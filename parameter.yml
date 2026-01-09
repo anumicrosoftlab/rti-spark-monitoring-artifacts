@@ -55,7 +55,7 @@ find_replace:
     is_regex: "false"
     item_type: "Notebook"
 
-  # Cross-references in JSON configurations (FIXED with capturing groups)
+  # Cross-references in JSON configurations
   - find_value: ("itemName":\s*"Spark Monitoring\.KQLDatabase")
     replace_value:
       _ALL_: "\"itemName\": \"$items.KQLDatabase.Spark Monitoring.KQLDatabase.$name\""
@@ -63,9 +63,9 @@ find_replace:
     item_type: "Eventstream"
     item_name: ["SparkMonitoring.Eventstream"]
 
+  # Fix KQL Queryset database reference
   - find_value: "SparkMonitoring"
     replace_value:
-    ALL: "Spark Monitoring.KQLDatabase"
+      _ALL_: "Spark Monitoring.KQLDatabase"
     is_regex: "false"
     item_type: "KQLQueryset"
-
