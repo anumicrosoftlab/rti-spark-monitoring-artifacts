@@ -127,8 +127,9 @@ find_replace:
     item_name: ["Spark Monitoring.KQLDashboard"] # filter on specific dashboard files
 
   # KQL Queryset database name replacement (fix for the earlier error)
-  - find_value: "SparkMonitoring"
+  - find_value: "Spark Monitoring"
     replace_value:
       _ALL_: "Spark Monitoring.KQLDatabase" # correct database name (dynamic)
     is_regex: "false"
     item_type: "KQLQueryset" # filter on KQL queryset files
+
